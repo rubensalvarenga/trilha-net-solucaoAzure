@@ -1,0 +1,87 @@
+﻿﻿@using Azure.Core;
+@using System.Globalization;
+@model IEnumerable<AppAzure.Models.Funcionario>
+
+
+@{
+    ViewData["Title"] = "Listagem Funcionários";
+}
+
+
+<h2>Listagem de Funcionários</h2>
+<br />
+<p>
+    <a asp-action="Criar">Novo Funcionário</a>
+</p>
+<br />
+
+<p>
+    <a asp-action="Log">Logo de acesso</a>
+</p>
+<br />
+
+
+<div class="">
+    <table class="tabela-contato shadow tela-contato">
+        <thead>
+            <tr class="cabecario">
+
+                <th class="linha-cabecario">
+                    NOME
+                </th>
+                <th>
+                    ENDEREÇO
+                </th>
+                <th>
+                    DEPARTAMENTO
+                </th>
+                <th>
+                    EMAIL PROFISSIONAL
+                </th>
+                <th>
+                    SALÁRIO
+                </th>
+                <th>
+                    ADMISSÃO
+                </th>
+                <th>
+                    OPÇÕES
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+
+            {
+                
+                                     
+                <tr>
+
+                    <td class="linha-cabecario">
+                        @Html.DisplayFor(model => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Departamento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.EmailProfissional)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Salario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.DataAdmissao)
+                    </td>
+                    <td class="selecao-icon">
+                        <a asp-action="Editar" asp-route-id="@item.RowKey">  <i class="fa fa-pencil"></i></a>
+                        <a asp-action="Detalhes" asp-route-id="@item.RowKey"><i class="fa fa-eye"></i></a>
+                        <a asp-action="Excluir" asp-route-id="@item.RowKey"> <i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

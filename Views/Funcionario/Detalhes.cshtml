@@ -1,0 +1,58 @@
+﻿@model AppAzure.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Detalhes do Funcionario";
+
+}
+
+<h1>Funcionário Detalhe</h1>
+
+<div class="shadow tela-contato">
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Nome)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Nome)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Endereco)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Endereco)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.EmailProfissional)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.EmailProfissional)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Ramal)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Ramal)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Departamento)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Departamento)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Salario)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Salario)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.DataAdmissao)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.DataAdmissao)
+        </dt>
+    </dl>
+</div>
+<br />
+<br />
+<a asp-action="Index">Voltar</a>

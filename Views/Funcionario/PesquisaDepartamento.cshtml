@@ -1,0 +1,55 @@
+﻿@model List<AppAzure.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Pesquisa por Departamento";
+}
+<br />
+
+<h2>Filtro por Nome do Funcionário</h2>
+<br />
+
+
+<div class="pesquisa">
+    <table class="tabela-contato shadow tela-contato ">
+        <thead>
+            <tr class="cabecario">
+                <th class="linha-cabecario">ID</th>
+                <th>NOME</th>
+                <th>DEPARTAMENTO</th>
+                <th>ADMISSÃO</th>
+                <th>SALARIO</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="linha-cabecario">
+                        @Html.DisplayFor(model => item.Id)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => item.Nome)
+                    </td>
+
+                    <td>
+                    @Html.DisplayFor(model => item.Departamento)
+                    </td>
+
+                    <td>
+                       @Html.DisplayFor(model => item.DataAdmissao)
+                   </td>
+
+                   <td>
+                       @Html.DisplayFor(model => item.Salario)
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+       
+    </table>
+    <br />
+    <a asp-action="Index">Voltar</a>
+</div>

@@ -1,0 +1,71 @@
+﻿@model AppAzure.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Criar Nova Tarefa";
+}
+
+
+
+<div>
+
+    <h1>Novo Funcionário</h1>
+
+    <div class="row ">
+
+        <div class="shadow tela-contato">
+            <form asp-action="Criar">
+                <div class="form-group ">
+                    <br />
+                    <label asp-for="Nome" class="control-label"></label>
+                    <input asp-for="Nome" class="form-control" />
+
+
+                </div>
+
+                <div class="form-group input-icon">
+                    <label asp-for="Endereco" class="control-label"></label>
+                    <input asp-for="Endereco" class="form-control" />
+
+                </div>
+
+                <div class="form-group input-icon">
+                    <label asp-for="Ramal" class="control-label"></label>
+                    <input asp-for="Ramal" class="form-control" />
+                </div>
+
+                <div class="form-group input-icon">
+                    <label asp-for="EmailProfissional" class="control-label"></label>
+                    <input type="email" asp-for="EmailProfissional" class="form-control" />
+                </div>
+
+                <div class="form-group input-icon">
+                    <label asp-for="Departamento" class="control-label"></label>
+                    <input asp-for="Departamento" class="form-control" />
+                </div>
+
+                <div class="form-group input-icon">
+                    <label asp-for="Salario" class="control-label"></label>
+                    <input type="number" asp-for="Salario" class="form-control" />
+                </div>
+
+
+                <div class="form-group input-icon">
+                    <label asp-for="DataAdmissao" class="control-label"></label>
+                    <input type="date" asp-for="DataAdmissao" class="form-control" />
+                </div>
+
+                <br />
+
+                <div class="form-group">
+                    <input type="submit" value="Criar" class="btn btn-primary" />
+
+
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+    <br />
+    <a asp-action="Index">Voltar</a>
+    <br />
+</div>

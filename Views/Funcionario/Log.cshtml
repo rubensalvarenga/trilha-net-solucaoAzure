@@ -1,0 +1,56 @@
+﻿@model List<AppAzure.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Listagem log de Acesso";
+}
+<br />
+
+<h2>Log da Tabela</h2>
+<br />
+
+
+<div >
+    <table class="tabela-contato shadow tela-contato">
+        <thead>
+            <tr class="cabecario">
+                
+                <th class="linha-cabecario">TIPO DE AÇÃO</th>
+                <th>DATA</th>
+                <th>ROWKEY</th>
+                <th>ETAG</th>
+                <th>PARTITIONKEY</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="linha-cabecario">
+                        @Html.DisplayFor(model => item.TipoAcao)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => item.Timestamp)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => item.RowKey)
+                    </td>
+
+                    <td>
+                       @Html.DisplayFor(model => item.ETag)
+                   </td>
+
+                   <td>
+                       @Html.DisplayFor(model => item.PartitionKey)
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+       
+    </table>
+    <br />
+    <a asp-action="Index">Voltar</a>
+</div>
